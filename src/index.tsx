@@ -1,0 +1,2 @@
+export { minesweeper } from './middleware';
+

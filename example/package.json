@@ -1,0 +1,24 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-app-polyfill": "^1.0.0",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "redux-starter-kit": "^0.5.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.15",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.0.8",
+    "parcel": "^1.12.3",
+    "redux-devtools-extension": "^2.13.8",
+    "typescript": "^3.4.5"
+  }
+}
