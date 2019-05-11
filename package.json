@@ -1,5 +1,6 @@
 {
   "name": "redux-minesweeper",
+  "description": "Find unintentional updates in your React components",
   "version": "0.1.0",
   "main": "dist/index.js",
   "umd:main": "dist/redux-minesweeper.umd.production.js",

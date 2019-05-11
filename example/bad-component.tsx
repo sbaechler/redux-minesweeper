@@ -13,8 +13,6 @@ export class BadComponent extends React.PureComponent<IProps> {
   }
 
   render() {
-    console.log('BadComponent component render');
-
     return (
       <div>
         <p>{this.props.bad.join(',')}</p>

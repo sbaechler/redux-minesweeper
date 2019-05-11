@@ -1,36 +1,33 @@
 import { Middleware } from 'redux';
 import throttle from 'lodash.throttle';
-import './hook';
-
-export function minesweeper(React: any): Middleware {
-
-  let pinged = false;
-
-  const ping = throttle((dispatch) => {
+import updateHook from './hook';
 
 
+let pinged = false;
+let ping: (dispatch: any) => void;
+
+updateHook.then((stop) => {
+  ping = throttle((dispatch) => {
+    pinged = true;
     const action = {
       type: '@minesweeper:ping',
     }
 
     dispatch(action);
-    pinged = true;
-  }, 1000);
+    setTimeout(() => {
+      stop();
+    });
+
+  }, 1000, { trailing: true });
+});
 
 
-  const middleware: Middleware = store => next => action => {
-    console.group(action.type)
-    console.info('dispatching', action)
-    let result = next(action)
-    console.log('next state', store.getState())
-    console.groupEnd()
 
-    if(!pinged) {
-      ping(next);
-    }
 
-    return result
-  };
+export const minesweeper: Middleware = _ => next => action => {
+  if(ping && !pinged) {
+    ping(next);
+  }
 
-  return middleware;
-}
+  return next(action)
+};

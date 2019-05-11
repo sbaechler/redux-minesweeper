@@ -1,6 +1,5 @@
 import { configureStore } from 'redux-starter-kit';
 import rootReducer from './reducer';
-import * as React from 'react';
 import { minesweeper } from '../src';
 
 const initialState: any = {
@@ -8,11 +7,9 @@ const initialState: any = {
   bad: ['foo', 'bar', 'baz'],
 };
 
-const minesweeperInstance = minesweeper(React);
-
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: [minesweeperInstance],
+  middleware: [minesweeper],
   preloadedState: initialState,
 });
 
