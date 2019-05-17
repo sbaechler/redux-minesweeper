@@ -15,7 +15,8 @@
     "test": "tsdx test --env=jsdom"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=16",
+    "redux": ">=4.0.0"
   },
   "author": {
     "name": "Simon Bächler"
@@ -48,7 +49,6 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
-    "lodash.throttle": "^4.1.1",
-    "redux": "^4.0.1"
+    "lodash.throttle": "^4.1.1"
   }
 }

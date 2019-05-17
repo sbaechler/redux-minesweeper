@@ -24,9 +24,9 @@ updateHook.then((stop) => {
 
 
 
-export const minesweeper: Middleware = _ => next => action => {
+export const minesweeper: Middleware = store => next => action => {
   if(ping && !pinged) {
-    ping(next);
+    ping(store.dispatch);
   }
 
   return next(action)
